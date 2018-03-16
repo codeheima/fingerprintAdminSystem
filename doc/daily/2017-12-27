@@ -1,0 +1,17 @@
+1. ajax 
+   1.1 url
+   1.2 params
+   1.3 get/post
+   1.4 callback
+   1.5 listeners
+         beforeSend
+         afterSend
+
+2. pagePlugin
+  2.1 url
+  2.2 sendParams
+  2.3 add params : totalCount  currentPage  , pageSize , hasNext, hasPreview
+  2.4 invoke model
+  2.5 listener
+         beforeSend
+  		 afterSend

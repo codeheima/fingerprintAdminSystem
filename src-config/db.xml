@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DB>
+	<common>
+		<properties>
+			<property name="showsql">true</property>
+			<property name="resource.reload">true</property>
+		</properties>
+	</common>
+	
+	<conn>
+		<pool name="systemdb|platformdb|zfdb">
+			<properties>
+				<property name="method">jdbc</property>
+				<property name="type">mysql</property>
+				<property name="driverclass">com.mysql.jdbc.Driver</property>
+				<property name="url">jdbc:mysql://192.168.101.165:3306/ct?useUnicode=true&amp;characterEncoding=utf-8</property>
+				<property name="user">root</property>
+				<property name="password">123456</property>
+				<property name="minActive">1</property>
+				<property name="maxActive">10</property>
+			</properties>
+		</pool>
+	</conn>
+	
+	<tsd>
+        <model resource="org/ma/app/dao/chat.tsd.xml"/>
+        <model resource="org/ma/app/dao/customer.tsd.xml"/>
+	</tsd>
+	
+	<tables>
+		<table resource="org/ma/app/dao/table.xml" />
+	</tables>
+</DB>

@@ -1,0 +1,9 @@
+该包用来在后台拼写html时使用。
+
+FSimpleContext.java  Context的简易实现版
+
+FManager.java FModel的持有类,常用方法 public FModel findModel(String ns,String name);
+
+FModel.java  模板javabean
+
+temp.xml 为测试模板

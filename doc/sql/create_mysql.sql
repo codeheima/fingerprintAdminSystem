@@ -1,0 +1,63 @@
+--DROP TABLE customer;
+
+CREATE TABLE IF not EXISTS  CUSTOMER (
+
+	CUS_ID varchar(32) NOT NULL DEFAULT '' COMMENT 'id',
+	CUS_NAME varchar(64) DEFAULT NULL  COMMENT '姓名',
+	CUS_COMPANY  varchar(64) DEFAULT NULL COMMENT '公司',
+	CUS_CODE varchar(32)  DEFAULT NULL  COMMENT '编码',
+	CUS_SEX varchar(32) DEFAULT NULL  COMMENT '性别',
+	CUS_PD varchar(64) DEFAULT NULL COMMENT '密码',
+	ZF_COUNT varchar(32) DEFAULT '0'  COMMENT '指纹个数',
+	
+	PRIMARY KEY (CUS_ID) 
+	
+);
+
+
+-- 2017-11-12 12:12:12
+CREATE TABLE IF not EXISTS  CUSTOMER_ZF (
+	CUS_ID varchar(32) NOT NULL DEFAULT '',
+	ZF_ARR blob DEFAULT NULL  COMMENT '合并后的指纹',
+	reg_time varchar(32) NOT NULL DEFAULT '' COMMENT '注册时间',
+	KEY `index_c_zf_CUS_ID` (`CUS_ID`)
+);
+
+
+CREATE TABLE IF not EXISTS  CUSTOMER_CURRENT (
+	CUS_ID varchar(32) NOT NULL DEFAULT '',
+	ZF1 blob DEFAULT NULL,
+	ZF2 blob DEFAULT NULL,
+	ZF3 blob DEFAULT NULL,
+	PRIMARY KEY (CUS_ID)
+);
+
+--
+CREATE TABLE IF not EXISTS  LOGIN_LOG (
+	CUS_ID varchar(32)  DEFAULT '',
+	CUS_CODE varchar(32) DEFAULT '',
+	CUS_NAME varchar(64) DEFAULT '',
+	IP varchar(64)  DEFAULT '' COMMENT 'IP',
+	MAC varchar(64) DEFAULT '' COMMENT 'MAC',
+	CPU varchar(64) DEFAULT '' COMMENT 'CPU',
+	CLIENT_ID varchar(64) DEFAULT '' COMMENT 'clientId',
+	LOG_TYPE varchar(2) DEFAULT '' COMMENT '类型:登入:1、登出:2',
+	LOG_TIME varchar(32) DEFAULT '' COMMENT '时间',
+	LOG_DES varchar(32) DEFAULT ''
+);
+
+
+CREATE TABLE IF not EXISTS  LOGIN_LOG_CURRENT (
+	CUS_ID varchar(32)  DEFAULT '',
+	CUS_CODE varchar(32) DEFAULT '',
+	CUS_NAME varchar(64) DEFAULT '',
+	IP varchar(64)  DEFAULT '' COMMENT 'IP',
+	MAC varchar(64) DEFAULT '' COMMENT 'MAC',
+	CPU varchar(64) DEFAULT '' COMMENT 'CPU',
+	CLIENT_ID varchar(64) DEFAULT '' COMMENT 'clientId',
+	LOG_TYPE varchar(2) DEFAULT '' COMMENT '类型:登入:1、登出:2',
+	LOG_TIME varchar(32) DEFAULT '' COMMENT '时间',
+	LOG_DES varchar(32) DEFAULT ''
+);
+
+

@@ -1,0 +1,1 @@
+java -jar FileUnion.jar ctj_js.list build/ctj-all-0.1.js

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manager>
+	<models ns="hello.world">
+		<model name="one">
+			<![CDATA[
+				<input type="password" id="${attrId}" name="${attrId}" class="password" 
+				validator="{required:true,byteRangeLength:[5,12],messages:{required:'密码必须填写',byteRangeLength:'密码长度必须在5和12个字符之间'}}" 	/>
+			]]>
+		</model>
+		<model name="two">
+			<![CDATA[
+				<#list myList as abc >
+					 ${abc} <#if abc_has_next>,</#if> 
+				</#list>  
+				list.size() = ${myList?size}
+			]]>
+		</model>
+	</models>
+	
+	
+	<models ns="taiji.com.a.b.c">
+		<model name="one">
+			<![CDATA[
+				<#if student.studentAge lt 12>  
+				    ${student.studentName}不是一个初中生  
+				<#elseif student.studentAge lt 15>  
+				    ${student.studentName}不是一个高中生  
+				<#elseif student.studentAge lt 18>  
+				    ${student.studentName}不是一个大学生  
+				<#else>  
+				    ${student.studentName}是一个大学生  
+				</#if>  
+				<#if student.bb?? && "" != student.bb>
+					123456
+				</#if>  
+				 
+			]]>
+		</model>
+		<model name="two">
+			<![CDATA[
+				
+			]]>
+		</model>
+	</models>
+</manager>
